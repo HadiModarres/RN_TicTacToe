@@ -47,7 +47,9 @@ describe("TicTacToe", () => {
     game.place_marker("x", 2, 0);
     game.place_marker("o", 1, 0);
     game.place_marker("x", 0, 1);
-    game.place_marker("o", 1, 2);
+
+    expect(game.get_win_conditions()).toStrictEqual([]);
+    game.place_marker("o", 1, 2); // place the winning marker
 
     const exptectedWinCondition: WinCondition = {
       symbol: "o",
