@@ -37,7 +37,6 @@ export default function RootLayout() {
         <Stack>
           <Stack.Screen name="index" options={{ headerTitle: "New Game" }} />
           <Stack.Screen name="game" options={{ headerTitle: "Tic Tac Toe" }} />
-          <Stack.Screen name="+not-found" />
         </Stack>
         <StatusBar style="auto" />
       </ThemeProvider>

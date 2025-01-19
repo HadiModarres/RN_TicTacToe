@@ -2,7 +2,7 @@ import { router } from "expo-router";
 import React from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 
-const NewGameScreen = () => {
+export default function NewGameScreen() {
   const handleSelectSize = (size: number) => {
     router.push({ pathname: "/game", params: { boardSize: size } });
   };
@@ -25,9 +25,7 @@ const NewGameScreen = () => {
       </View>
     </View>
   );
-};
-
-export default NewGameScreen;
+}
 
 const styles = StyleSheet.create({
   container: {

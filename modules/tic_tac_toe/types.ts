@@ -23,6 +23,9 @@ export type Direction =
 
 export type WinCondition = {
   symbol: TicTacToeSymbol;
+  /**
+   * the point where placing the symbol caused the win condition
+   */
   initiatedPoint: BoardPoint;
   firstSegment: BoardPoint[];
   secondSegment: BoardPoint[];
