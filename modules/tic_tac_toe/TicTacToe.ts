@@ -12,6 +12,9 @@ export class TicTacToe {
   private readonly winCondition: WinCondition[];
   private winMatchCount = 3;
   constructor(boardSize: number) {
+    if (boardSize < 3) {
+      throw Error("board size must be at least 3");
+    }
     this.boardSize = boardSize;
     this.board = new Map();
     this.winCondition = [];
@@ -22,6 +25,7 @@ export class TicTacToe {
       column,
       row,
     };
+
     if (!this.is_point_valid(boardPoint)) {
       throw Error("invalid input");
     }
@@ -72,12 +76,12 @@ export class TicTacToe {
     }
 
     const firstSegmentPoints = this.matching_symbols_in_direction(
-      this.getNextPointInDirection(boardPoint, firstDirection),
+      this.get_next_point_direction(boardPoint, firstDirection),
       firstDirection,
       symbol,
     );
     const secondSegmentPoints = this.matching_symbols_in_direction(
-      this.getNextPointInDirection(boardPoint, secondDirection),
+      this.get_next_point_direction(boardPoint, secondDirection),
       secondDirection,
       symbol,
     );
@@ -107,7 +111,7 @@ export class TicTacToe {
       return [
         boardPoint,
         ...this.matching_symbols_in_direction(
-          this.getNextPointInDirection(boardPoint, direction),
+          this.get_next_point_direction(boardPoint, direction),
           direction,
           symbol,
         ),
@@ -117,7 +121,7 @@ export class TicTacToe {
     return [];
   }
 
-  private getNextPointInDirection(
+  private get_next_point_direction(
     boardPoint: BoardPoint,
     direction: Direction,
   ): BoardPoint {
