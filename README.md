@@ -30,4 +30,4 @@
         ```bash
         npm start
         ```
-     3. Scan the QR code displayed in the terminal using the **Expo Go** app.
+     3. Scan the QR code displayed in the terminal using your phone's camera.
