@@ -7,7 +7,7 @@ import {
 } from "./types";
 
 /**
- * This class impelements the logic for a TicTacToe game.
+ * This class implements the logic for a TicTacToe game.
  * It allows a variable board size, and the complexity of placing markers is O(1) and independent of board size.
  * It detects multiple win conditions, e.g. north-south connected line and east-west connected line. This can be used
  * by the consuming entity to for example show UI for multiple win conditions.
