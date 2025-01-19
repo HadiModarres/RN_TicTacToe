@@ -64,7 +64,7 @@ export class TicTacToe {
   }
 
   is_board_filled(): boolean {
-    return this.board.size == this.boardSize ** 2;
+    return this.board.size === this.boardSize ** 2;
   }
 
   get_symbol(boardPoint: BoardPoint): TicTacToeSymbol | undefined {
